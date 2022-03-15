@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControlCharacter : MonoBehaviour {
     public GameObject characterPrincipal;
+    public float velocidad=20f;
     // Use this for initialization
     void Start () {
         
@@ -11,6 +12,21 @@ public class ControlCharacter : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        transform.position += Vector3.forward * Time.deltaTime;
+        //transform.position += Vector3.forward * Time.deltaTime;
+        if(Input.GetKey(KeyCode.UpArrow)){
+            transform.position += Vector3.forward * Time.deltaTime;
+        }
+        //Cuando presione la tecla DOWN el carro avanza hacia atrás o en reversa
+        if(Input.GetKey(KeyCode.DownArrow)){
+            transform.position -= Vector3.forward * Time.deltaTime;
+        }
+        //Cuando presione la tecla RIGHT
+        if(Input.GetKey(KeyCode.RightArrow)){
+            transform.position += Vector3.right * Time.deltaTime;
+        }
+        //Cuando presione la tecla LEFT 
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            transform.position -= Vector3.right * Time.deltaTime;
+        }
     }
 }
