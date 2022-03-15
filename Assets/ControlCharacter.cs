@@ -11,6 +11,6 @@ public class ControlCharacter : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        transform.position += Vector3.forward * Time.deltaTime;  
+        transform.position += Vector3.forward * Time.deltaTime;
     }
 }
