@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ActiveTrampa4 : MonoBehaviour {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject activarTrampa;
+    public Rigidbody rock;
+   
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.tag == "Carro") {
+            rock.GetComponent<Rigidbody> ().useGravity = true;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
